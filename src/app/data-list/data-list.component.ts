@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-data-list',
   templateUrl: './data-list.component.html',
   styleUrls: ['./data-list.component.scss']
 })
-export class DataListComponent {
+export class DataListComponent implements OnInit {
+  data: any[] = []; // Array to hold fetched data
+  // Pagination variables
+  currentPage = 1; // Current page number
+  itemsPerPage = 10; // Number of items per page
 
+  constructor(private dataService: DataService) { } // Remove @Inject
+
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData() {
+    this.dataService.getData().subscribe((result: any[]) => {
+      this.data = result;
+    });
+  }
 }

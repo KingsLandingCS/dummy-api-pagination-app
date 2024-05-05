@@ -19,8 +19,12 @@ export class DataListComponent implements OnInit {
   }
 
   getData() {
-    this.dataService.getData().subscribe((result: any[]) => {
-      this.data = result;
+    this.dataService.getDataFromServer().subscribe((result: any) => {
+      const { products } = result;
+      products.forEach((element: any) => {
+        this.data.push(element);
+        console.log(this.data);
+      });
     });
   }
 }

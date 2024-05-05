@@ -1,13 +1,17 @@
 import { Injectable } from '@angular/core';
 import { of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  getData() {
-    return of([]);
+
+  constructor(private readonly http: HttpClient) {
+
   }
 
-  constructor() { }
+  getDataFromServer() {
+    return this.http.get('https://dummyjson.com/products');
+  }
 }

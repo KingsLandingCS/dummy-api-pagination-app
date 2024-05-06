@@ -9,8 +9,10 @@ import { DataService } from '../data.service';
 export class DataListComponent implements OnInit {
   data: any[] = []; // Array to hold fetched data
   // Pagination variables
-  currentPage = 1; // Current page number
-  itemsPerPage = 10; // Number of items per page
+  currentPageNumber: number = 1; // Current page number
+  itemsPerPageNumber: number = 8; // Number of items per page
+
+
 
   constructor(private dataService: DataService) { } // Remove @Inject
 

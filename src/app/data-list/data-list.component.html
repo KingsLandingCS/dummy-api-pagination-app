@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3"
-      *ngFor="let item of data | slice: (currentPage - 1) * itemsPerPage : currentPage * itemsPerPage">
+    <div class="col-md-3" *ngFor="let item of data | paginate: { itemsPerPage: itemsPerPageNumber, currentPage: currentPageNumber }">
       <div class="card">
         <img src="{{item.thumbnail}}" class="card-img-top" alt="" height="300" width="300">
         <div class="card-body">
@@ -20,4 +19,4 @@
   </div>
 </div>
 
-<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+<pagination-controls (pageChange)="currentPageNumber = $event"></pagination-controls>

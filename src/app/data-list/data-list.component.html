@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3" *ngFor="let item of data">
+    <div class="col-md-3"
+      *ngFor="let item of data | slice: (currentPage - 1) * itemsPerPage : currentPage * itemsPerPage">
       <div class="card">
         <img src="{{item.thumbnail}}" class="card-img-top" alt="" height="300" width="300">
         <div class="card-body">
@@ -12,10 +13,11 @@
           <h4>{{item.price}}</h4>
           <h5>{{item.rating}}</h5>
           <h5>{{item.stock}}</h5>
-
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<pagination-controls (pageChange)="currentPage = $event"></pagination-controls>

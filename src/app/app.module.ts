@@ -12,7 +12,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
   declarations: [
     AppComponent,
     DataListComponent,
-
   ],
   imports: [
     BrowserModule,

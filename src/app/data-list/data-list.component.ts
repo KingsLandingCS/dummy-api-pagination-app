@@ -11,7 +11,7 @@ export class DataListComponent implements OnInit {
   // Pagination variables
   currentPageNumber: number = 1; // Current page number
   itemsPerPageNumber: number = 8; // Number of items per page
-
+  searchQuery = '';
 
 
   constructor(private dataService: DataService) { } // Remove @Inject
@@ -29,4 +29,5 @@ export class DataListComponent implements OnInit {
       });
     });
   }
+
 }

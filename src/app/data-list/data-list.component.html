@@ -1,17 +1,22 @@
-<div class="container">
+
+
+
+<!-- Product Cards -->
+<div class="container mt-4">
   <div class="row">
-    <div class="col-md-3" *ngFor="let item of data | paginate: { itemsPerPage: itemsPerPageNumber, currentPage: currentPageNumber }">
+    <div class="col-md-3 my-3"
+      *ngFor="let item of data | paginate: { itemsPerPage: itemsPerPageNumber, currentPage: currentPageNumber }">
       <div class="card">
         <img src="{{item.thumbnail}}" class="card-img-top" alt="" height="300" width="300">
         <div class="card-body">
+          <h1 class="card-title">{{item.title}}</h1>
           <h2>{{item.brand}}</h2>
           <h4>{{item.category}}</h4>
-          <h5 class="card-title">{{item.title}}</h5>
           <p class="card-text">{{item.description}}
           </p>
-          <h4>{{item.price}}</h4>
-          <h5>{{item.rating}}</h5>
-          <h5>{{item.stock}}</h5>
+          <p>{{item.price}}</p>
+          <p>{{item.rating}}</p>
+          <p>{{item.stock}}</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
       </div>
@@ -19,4 +24,5 @@
   </div>
 </div>
 
+<!-- Pagination controls -->
 <pagination-controls (pageChange)="currentPageNumber = $event"></pagination-controls>

@@ -11,7 +11,7 @@ export class DataListComponent implements OnInit {
   // Pagination variables
   currentPageNumber: number = 1; // Current page number
   itemsPerPageNumber: number = 8; // Number of items per page
-  searchQuery = '';
+  searchQuery: any = '';
 
 
   constructor(private dataService: DataService) { } // Remove @Inject
@@ -25,9 +25,13 @@ export class DataListComponent implements OnInit {
       const { products } = result;
       products.forEach((element: any) => {
         this.data.push(element);
-        console.log(this.data);
       });
     });
+  }
+
+  // Search function
+  searchData(query: any) {
+    this.searchQuery = query;
   }
 
 }

@@ -8,11 +8,13 @@ import { DataListComponent } from './data-list/data-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { SearchPipePipe } from './shared/search-pipe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataListComponent,
+    SearchPipePipe,
   ],
   imports: [
     BrowserModule,

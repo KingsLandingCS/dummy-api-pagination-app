@@ -1,9 +1,11 @@
 <!-- Search Field -->
-<div class="input-group">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
-    aria-describedby="search-addon" #search />
-  <button type="button" class="btn btn-outline-primary" (click)="searchData(search.value)"
-    data-mdb-ripple-init>search</button>
+<div class="d-flex justify-content-center mt-3">
+  <div class="input-group w-25">
+    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+      aria-describedby="search-addon" #search />
+    <button type="button" class="btn btn-outline-primary" (click)="searchData(search.value)"
+      data-mdb-ripple-init>search</button>
+  </div>
 </div>
 
 <!-- Product Cards -->
